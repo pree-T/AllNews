@@ -41,7 +41,8 @@
             android:textColor="@color/grey"
             android:inputType="textPersonName"
             android:padding="10dp"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/button"
@@ -56,12 +57,18 @@
             android:paddingRight="20dp"
             android:layout_marginBottom="10dp"/>
     </GridLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"/>
+        android:id="@+id/swipe">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
 

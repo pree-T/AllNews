@@ -16,12 +16,23 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="200dp">
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:id="@+id/pgbar"/>
 
             <ImageView
                 android:id="@+id/image1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient" />
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/todo" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient"
+                android:contentDescription="@string/todo" />
 
 
             <TextView
