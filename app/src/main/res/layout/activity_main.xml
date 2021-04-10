@@ -29,7 +29,7 @@
         android:background="@drawable/black_bg">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etQuery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -45,7 +45,7 @@
             android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"

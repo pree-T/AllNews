@@ -2,6 +2,7 @@ package com.example.allnews;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,12 +49,28 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull Adapter.ViewHolder holder, int position) {
         Articles a=articles.get(position);
-        holder.tvTitle.setText(a.getTitle());
-        holder.tvSource.setText(a.getSource().getName());
-        holder.tvDate.setText("\u2022"+dateTime(a.getPub()));
 
         String imageUrl=a.getUtom();
         Picasso.get().load(imageUrl).into(holder.imageView);
+
+        holder.tvTitle.setText(a.getTitle());
+        holder.tvSource.setText(a.getSource().getName());
+        holder.tvDate.setText("\u2022"+dateTime(a.getPub()));
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Details.class);
+                intent.putExtra("title",a.getTitle());
+                intent.putExtra("source",a.getSource().getName());
+                intent.putExtra("time",dateTime(a.getPub()));
+                intent.putExtra("desc",a.getDesp());
+                intent.putExtra("imageUrl",a.getUtom());
+                intent.putExtra("url",a.getUrl());
+                context.startActivity(intent);
+            }
+        });
+
+
 
     }
 
